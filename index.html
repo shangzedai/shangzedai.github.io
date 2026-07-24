@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shangze (Rudy) Dai – Economist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1a2744;
+      --navy-mid: #2d3f6b;
+      --cream: #f6f1e9;
+      --cream-dark: #ede7d9;
+      --gold: #b8862a;
+      --gold-light: #d4a84b;
+      --text: #2a2a2a;
+      --muted: #6b6b6b;
+      --border: #d8d0c4;
+      --sidebar-w: 300px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ───── NAV ───── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      height: 52px;
+      align-items: center;
+    }
+    nav a {
+      color: #c8d4f0;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0 22px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      border-bottom: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    nav a:hover, nav a.active {
+      color: #fff;
+      border-bottom-color: var(--gold-light);
+    }
+
+    /* ───── LAYOUT ───── */
+    .layout {
+      display: flex;
+      min-height: 100vh;
+      padding-top: 52px;
+    }
+
+    /* ───── SIDEBAR ───── */
+    aside {
+      width: var(--sidebar-w);
+      flex-shrink: 0;
+      position: sticky;
+      top: 52px;
+      height: calc(100vh - 52px);
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 28px 32px;
+      overflow-y: auto;
+    }
+
+    .avatar-ring {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      padding: 4px;
+      margin-bottom: 22px;
+      flex-shrink: 0;
+    }
+    .avatar-ring img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: var(--navy-mid);
+    }
+    /* Placeholder initials when no image */
+    .avatar-placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy-mid), #3d5491);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
+    }
+
+    .sidebar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      color: #fff;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .sidebar-name em {
+      font-style: italic;
+      color: var(--gold-light);
+      font-size: 1rem;
+    }
+    .sidebar-role {
+      font-size: 0.74rem;
+      color: #8fa0c8;
+      text-align: center;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+      margin: 0 auto 20px;
+    }
+
+    .sidebar-info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .info-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .info-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      opacity: 0.6;
+      fill: var(--gold-light);
+    }
+    .info-text {
+      font-size: 0.77rem;
+      color: #b0bed8;
+      line-height: 1.45;
+    }
+    .info-text a {
+      color: #c8d4f0;
+      text-decoration: none;
+    }
+    .info-text a:hover { color: var(--gold-light); }
+
+    .sidebar-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 4px;
+    }
+    .sidebar-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #8fa0c8;
+      text-decoration: none;
+      border: 1px solid rgba(200,212,240,0.2);
+      padding: 5px 11px;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .sidebar-links a:hover {
+      color: var(--gold-light);
+      border-color: var(--gold);
+      background: rgba(184,134,42,0.08);
+    }
+
+    .sidebar-stat-row {
+      display: flex;
+      gap: 0;
+      margin-top: 24px;
+      width: 100%;
+      border: 1px solid rgba(200,212,240,0.15);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .sidebar-stat {
+      flex: 1;
+      text-align: center;
+      padding: 12px 4px;
+      border-right: 1px solid rgba(200,212,240,0.15);
+    }
+    .sidebar-stat:last-child { border-right: none; }
+    .sidebar-stat .num {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .sidebar-stat .lbl {
+      display: block;
+      font-size: 0.62rem;
+      color: #6b80a8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 3px;
+    }
+
+    /* ───── MAIN CONTENT ───── */
+    main {
+      flex: 1;
+      padding: 60px 64px 80px;
+      max-width: 860px;
+    }
+
+    /* ───── SECTION ───── */
+    section {
+      margin-bottom: 64px;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1.5px solid var(--border);
+    }
+
+    /* ───── ABOUT ───── */
+    #about p {
+      font-size: 1rem;
+      color: #3a3a3a;
+      margin-bottom: 14px;
+      max-width: 680px;
+    }
+
+    .interests-grid {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .tag {
+      background: var(--navy);
+      color: #c8d4f0;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 6px 14px;
+      border-radius: 2px;
+    }
+
+    /* ───── EDUCATION ───── */
+    .edu-list { display: flex; flex-direction: column; gap: 20px; }
+    .edu-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 18px 20px;
+      background: #fff;
+      border-left: 3px solid var(--gold);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .edu-logo {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      object-fit: contain;
+      margin-top: 2px;
+    }
+    .edu-logo-placeholder {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold-light);
+    }
+    .edu-body {}
+    .edu-degree {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--navy);
+    }
+    .edu-school {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .edu-meta {
+      display: flex;
+      gap: 14px;
+      margin-top: 5px;
+      flex-wrap: wrap;
+    }
+    .edu-year {
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .edu-gpa {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .edu-field {
+      font-size: 0.78rem;
+      color: #5a6a88;
+      font-style: italic;
+      margin-top: 3px;
+    }
+
+    /* ───── PUBLICATIONS ───── */
+    .pub-list { display: flex; flex-direction: column; gap: 22px; }
+    .pub-item {
+      padding: 20px 22px;
+      background: #fff;
+      border-radius: 1px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      border-top: 2px solid transparent;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .pub-item:hover {
+      border-top-color: var(--gold);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    }
+    .pub-title {
+      font-size: 0.96rem;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+    .pub-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .pub-title a:hover { color: var(--gold); }
+    .pub-authors {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .pub-authors strong { color: var(--navy); font-weight: 500; }
+    .pub-venue {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+    .pub-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.67rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 2px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .badge-rr {
+      background: rgba(184,134,42,0.12);
+      color: var(--gold);
+      border: 1px solid rgba(184,134,42,0.3);
+    }
+    .badge-pub {
+      background: rgba(26,39,68,0.08);
+      color: var(--navy-mid);
+      border: 1px solid rgba(26,39,68,0.15);
+    }
+    .pub-year-chip {
+      position: absolute;
+      right: 22px;
+      top: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--cream-dark);
+      font-weight: 600;
+      user-select: none;
+    }
+
+    /* ───── WORKING PAPERS ───── */
+    .wp-list { display: flex; flex-direction: column; gap: 18px; }
+    .wp-item {
+      padding: 18px 22px;
+      background: linear-gradient(135deg, rgba(26,39,68,0.03), rgba(26,39,68,0.01));
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--navy-mid);
+    }
+
+    /* ───── TEACHING ───── */
+    .teach-list { display: flex; flex-direction: column; gap: 14px; }
+    .teach-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 20px;
+      background: #fff;
+      border-right: 3px solid var(--navy);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .teach-body {}
+    .teach-course {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--navy);
+    }
+    .teach-role {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .teach-date {
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ───── AWARDS ───── */
+    .award-list { display: flex; flex-direction: column; gap: 10px; }
+    .award-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 11px 20px;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+    }
+    .award-name {
+      font-size: 0.88rem;
+      color: var(--text);
+      font-weight: 400;
+    }
+    .award-inst {
+      font-size: 0.77rem;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+    .award-year {
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .award-star::before {
+      content: '★ ';
+      color: var(--gold);
+      font-size: 0.7rem;
+    }
+
+    /* ───── SERVICE ───── */
+    .service-block {
+      padding: 20px 24px;
+      background: #fff;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .service-block h4 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .service-tag {
+      font-size: 0.74rem;
+      color: var(--muted);
+      background: var(--cream-dark);
+      padding: 4px 11px;
+      border-radius: 2px;
+    }
+
+    /* ───── SKILLS / MISC ───── */
+    .skills-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .skill-block {
+      flex: 1;
+      min-width: 160px;
+      padding: 18px 20px;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .skill-block h4 {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .skill-block p {
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    /* ───── FOOTER ───── */
+    footer {
+      background: var(--navy);
+      color: #4a5878;
+      font-size: 0.72rem;
+      text-align: center;
+      padding: 20px;
+      letter-spacing: 0.05em;
+    }
+    footer a { color: #6b80a8; }
+
+    /* ───── RESPONSIVE ───── */
+    @media (max-width: 900px) {
+      .layout { flex-direction: column; }
+      aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 24px 28px;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .avatar-ring { width: 80px; height: 80px; margin-bottom: 0; }
+      .sidebar-stat-row { display: none; }
+      main { padding: 40px 28px 60px; }
+    }
+    @media (max-width: 600px) {
+      nav a { font-size: 0.65rem; padding: 0 10px; }
+      main { padding: 32px 18px 48px; }
+      .pub-year-chip { display: none; }
+    }
+
+    /* ───── DECORATIVE HEADER STRIPE ───── */
+    .hero-stripe {
+      background: linear-gradient(135deg, var(--navy) 0%, #2d3f6b 60%, #3d5491 100%);
+      padding: 48px 64px 44px;
+      margin-bottom: 52px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-stripe::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(184,134,42,0.2);
+    }
+    .hero-stripe::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: 80px;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      border: 1px solid rgba(184,134,42,0.1);
+    }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .hero-tagline em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-sub {
+      font-size: 0.85rem;
+      color: #8fa0c8;
+      max-width: 520px;
+      line-height: 1.6;
+    }
+    .hero-chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .hero-chip {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border: 1px solid rgba(184,134,42,0.35);
+      padding: 5px 13px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="topnav">
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#publications">Publications</a>
+  <a href="#working-papers">Working Papers</a>
+  <a href="#teaching">Teaching</a>
+  <a href="#awards">Awards</a>
+  <a href="#service">Service</a>
+</nav>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside>
+    <div class="avatar-ring">
+      <div class="avatar-placeholder">SD</div>
+    </div>
+    <div class="sidebar-name">Shangze <em>(Rudy)</em> Dai</div>
+    <div class="sidebar-role">Ph.D. Candidate · Economist</div>
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-info">
+      <div class="info-item">
+        <svg class="info-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        <span class="info-text">Gainesville, FL &amp; Baltimore, MD</span>
+      </div>
+      <div class="info-item">
+        <svg class="info-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span class="info-text">
+          <a href="mailto:shangzedai@ufl.edu">shangzedai@ufl.edu</a><br/>
+          <a href="mailto:sdai8@jhu.edu">sdai8@jhu.edu</a>
+        </span>
+      </div>
+      <div class="info-item">
+        <svg class="info-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+        <span class="info-text">
+          University of Florida (Ph.D. AEC)<br/>
+          Johns Hopkins University (M.S. AM)
+        </span>
+      </div>
+      <div class="info-item">
+        <svg class="info-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <span class="info-text"><a href="tel:+13525755109">(+01) 352-575-5109</a></span>
+      </div>
+    </div>
+
+    <div class="sidebar-links">
+      <a href="https://scholar.google.com/citations?hl=en&user=pHgtKY4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank">
+        Scholar
+      </a>
+      <a href="https://www.linkedin.com/in/rudydai-836282292/" target="_blank">
+        LinkedIn
+      </a>
+      <a href="https://github.com/DaiRudy/FRE-25-PHD-MathCamp" target="_blank">
+        GitHub
+      </a>
+    </div>
+
+    <div class="sidebar-stat-row">
+      <div class="sidebar-stat">
+        <span class="num">428+</span>
+        <span class="lbl">Citations</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="num">19</span>
+        <span class="lbl">Pub.</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="num">30+</span>
+        <span class="lbl">Reviews</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <div class="hero-stripe">
+      <div class="hero-tagline">Economics of <em>New Technology</em><br>& Sustainable Development</div>
+      <div class="hero-sub">
+        Ph.D. candidate at the University of Florida and M.S. student at Johns Hopkins University,
+        studying how emerging technologies reshape labor markets, ecological outcomes, and economic growth.
+      </div>
+      <div class="hero-chips">
+        <span class="hero-chip">Economics of AI</span>
+        <span class="hero-chip">Technological Progress</span>
+        <span class="hero-chip">Sustainable Development</span>
+        <span class="hero-chip">Digital Economy</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-label">Profile</div>
+      <div class="section-title">About Me</div>
+      <p>
+        I am a Ph.D. student in Applied Economics at the <strong>University of Florida</strong> (Advisor: Dr. Zhengfei Guan)
+        and an M.S. student in Applied Mathematics at <strong>Johns Hopkins University</strong> (Advisor: Prof. James Spall).
+        Prior to this, I completed a Certificate in International Studies at <strong>Hopkins Nanjing Center</strong>
+        and an M.Phil. in Economics at <strong>Wuhan University</strong>.
+      </p>
+      <p>
+        My research lies at the intersection of technology, environment, and economic development.
+        I develop theoretical models and empirical strategies to understand how AI, automation, and digital
+        technologies reshape labor markets, ecological footprints, and growth dynamics — particularly in
+        transforming and developing economies.
+      </p>
+      <p>
+        I have published in journals including <em>Ecological Economics</em>, <em>Environmental and Resource Economics</em>,
+        <em>Review of Development Economics</em>, <em>Journal of Regional Science</em>, and <em>Energy Economics</em>,
+        with over 428 citations on Google Scholar.
+      </p>
+
+      <div class="interests-grid">
+        <span class="tag">Economics of AI &amp; Automation</span>
+        <span class="tag">Environmental Economics</span>
+        <span class="tag">Technological Progress</span>
+        <span class="tag">Regional &amp; Urban Economics</span>
+        <span class="tag">ESG &amp; Climate Strategy</span>
+        <span class="tag">General Equilibrium Modeling</span>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="section-label">Background</div>
+      <div class="section-title">Education</div>
+      <div class="edu-list">
+
+        <div class="edu-item">
+          <div class="edu-logo-placeholder">UF</div>
+          <div class="edu-body">
+            <div class="edu-degree">Ph.D. in Applied Economics</div>
+            <div class="edu-school">University of Florida, Gainesville</div>
+            <div class="edu-field">Economics of New Technology · Advisor: Dr. Zhengfei Guan</div>
+            <div class="edu-meta">
+              <span class="edu-year">2023 – 2027 (expected)</span>
+              <span class="edu-gpa">GPA: 3.94 / 4.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-logo-placeholder">JHU</div>
+          <div class="edu-body">
+            <div class="edu-degree">M.S. in Applied Mathematics</div>
+            <div class="edu-school">Johns Hopkins University, Baltimore</div>
+            <div class="edu-field">Probability &amp; Statistics, Applied Analysis · Advisor: Prof. James Spall</div>
+            <div class="edu-meta">
+              <span class="edu-year">2023 – 2026 (expected)</span>
+              <span class="edu-gpa">GPA: 4.00 / 4.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-logo-placeholder">HNC</div>
+          <div class="edu-body">
+            <div class="edu-degree">Certificate in International Studies</div>
+            <div class="edu-school">Hopkins Nanjing Center</div>
+            <div class="edu-field">International Economics</div>
+            <div class="edu-meta">
+              <span class="edu-year">2022 – 2023</span>
+              <span class="edu-gpa">GPA: 3.91 / 4.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-logo-placeholder">WHU</div>
+          <div class="edu-body">
+            <div class="edu-degree">M.Phil. in Economics</div>
+            <div class="edu-school">Wuhan University</div>
+            <div class="edu-field">Regional Economics</div>
+            <div class="edu-meta">
+              <span class="edu-year">2020 – 2023</span>
+              <span class="edu-gpa">GPA: 3.86 / 4.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-logo-placeholder">TJU</div>
+          <div class="edu-body">
+            <div class="edu-degree">B.S. in Economics</div>
+            <div class="edu-school">Tongji University, Shanghai · Minor in Law, Fudan University</div>
+            <div class="edu-field">Mathematical Finance</div>
+            <div class="edu-meta">
+              <span class="edu-year">2016 – 2020</span>
+              <span class="edu-gpa">GPA: 3.65 / 4.00</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <div class="section-label">Peer-Reviewed Research</div>
+      <div class="section-title">Selected Publications</div>
+      <div class="pub-list">
+
+        <div class="pub-item">
+          <div class="pub-year-chip">2026</div>
+          <div class="pub-title">Unintended Carbon Cost of Automation Technology in Transforming Economies: The Role of Capital Dependence and Structure Change</div>
+          <div class="pub-authors"><strong>Dai, S.</strong>*, &amp; Ji, J.</div>
+          <div class="pub-venue"><em>Ecological Economics</em>, 2026</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year-chip">2025</div>
+          <div class="pub-title">Technology Import and Biased Technological Progress in Transforming Economies: Evidence From China</div>
+          <div class="pub-authors"><strong>Dai, S.</strong>*, Ji, J., &amp; Yu, H.</div>
+          <div class="pub-venue"><em>Review of Development Economics</em>, 2025</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year-chip">2025</div>
+          <div class="pub-title">Understanding Automation's Impact on Ecological Footprint: Theory and Empirical Evidence from Europe</div>
+          <div class="pub-authors"><strong>Dai, S.</strong>*</div>
+          <div class="pub-venue"><em>Environmental and Resource Economics</em>, 2025</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year-chip">2025</div>
+          <div class="pub-title">Industrial Robot, Resource Misallocation, and Firm Innovation Performance</div>
+          <div class="pub-authors">Yang, B., Fan, F.*, <strong>Dai, S.</strong>* et al.</div>
+          <div class="pub-venue"><em>Journal of Regional Science</em>, 2025</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year-chip">2025</div>
+          <div class="pub-title">Trade Liberalization, Factor Network Association, and Energy Poverty</div>
+          <div class="pub-authors">Li, G., Zhang, N., <strong>Dai, S.</strong> et al.</div>
+          <div class="pub-venue"><em>Energy Economics</em>, 2025</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year-chip">2025</div>
+          <div class="pub-title">Understanding and Evaluating New Quality Productive Forces in China: Based on Machine Learning</div>
+          <div class="pub-authors">Cao, Y., <strong>Dai, S.</strong>*</div>
+          <div class="pub-venue"><em>Applied Economics Letters</em>, 2025</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year-chip">2024</div>
+          <div class="pub-title">The Effect of Gender Gap in Labor Market Participation on Carbon Emission Efficiency: State Level Empirical Evidence from the US</div>
+          <div class="pub-authors"><strong>Dai, S.</strong>, Dai, Y., &amp; Yu, H.</div>
+          <div class="pub-venue"><em>Energy and Environment</em>, 2024, 1–27</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year-chip">2024</div>
+          <div class="pub-title">Energy-Saving Technological Change, Regional Economy Growth and Endowment Structure: Empirical Evidence from Chinese Cities</div>
+          <div class="pub-authors"><strong>Dai, S.</strong>, Dai, Y., Hu, J., &amp; Yu, H.</div>
+          <div class="pub-venue"><em>Technology Analysis &amp; Strategic Management</em>, 2024, 1–14</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year-chip">2024</div>
+          <div class="pub-title">Green Bonds and Sustainable Development: Theoretical Model and Empirical Evidence from Europe</div>
+          <div class="pub-authors"><strong>Dai, S.</strong>, Yu, H., Aiya, F., &amp; Yang, B.</div>
+          <div class="pub-venue"><em>International Journal of Sustainable Development &amp; World Ecology</em>, 2024, 1–16</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year-chip">2021</div>
+          <div class="pub-title">Innovation Agglomeration and Urban Hierarchy: Evidence from Chinese Cities</div>
+          <div class="pub-authors">Fan, F., <strong>Dai, S.</strong>, Zhang, K., &amp; Ke, H.</div>
+          <div class="pub-venue"><em>Applied Economics</em>, 2021, 53(54), 6300–6318</div>
+        </div>
+
+      </div>
+
+      <p style="margin-top:18px; font-size:0.78rem; color:var(--muted);">
+        * Corresponding author. See <a href="https://scholar.google.com/citations?hl=en&user=pHgtKY4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" style="color:var(--gold);">Google Scholar</a> for the full list of 19 peer-reviewed publications.
+      </p>
+    </section>
+
+    <!-- WORKING PAPERS -->
+    <section id="working-papers">
+      <div class="section-label">In Progress</div>
+      <div class="section-title">Working Papers</div>
+      <div class="wp-list">
+
+        <div class="pub-item wp-item">
+          <div class="pub-title">
+            Mitigating the Heat: The Role of AI Technology in Shielding Corporate Environmental Performance from Extreme Temperatures
+            <span class="pub-badge badge-rr">R&amp;R</span>
+          </div>
+          <div class="pub-authors"><strong>Dai, S.</strong>*, &amp; Ji, J.</div>
+          <div class="pub-venue">Revise &amp; Resubmit at <em>Business Strategy and Environment</em></div>
+        </div>
+
+        <div class="pub-item wp-item">
+          <div class="pub-title">
+            Rural E-commerce and Land-Augmenting Technological Progress
+            <span class="pub-badge badge-rr">R&amp;R</span>
+          </div>
+          <div class="pub-authors">Yu, H., &amp; <strong>Dai, S.</strong>*</div>
+          <div class="pub-venue">Revise &amp; Resubmit at <em>Land Use Policy</em></div>
+        </div>
+
+        <div class="pub-item wp-item">
+          <div class="pub-title">Urban Density and Innovation Performance in Chinese Cities</div>
+          <div class="pub-authors">Fan, F., Zhang, K., &amp; <strong>Dai, S.</strong>*</div>
+          <div class="pub-venue">Under Review</div>
+        </div>
+
+        <div class="pub-item wp-item">
+          <div class="pub-title">Threshold Effects of Bioresource Technology on Carbon Intensity</div>
+          <div class="pub-authors">Cao, Y., Yu, H., &amp; <strong>Dai, S.</strong>*</div>
+          <div class="pub-venue">Under Review</div>
+        </div>
+
+      </div>
+
+      <div style="margin-top: 28px;">
+        <div class="section-label" style="margin-bottom:12px;">Current Research Projects</div>
+        <div class="wp-list">
+          <div class="pub-item wp-item" style="border-left-color: var(--gold);">
+            <div class="pub-title">Phillips Curve in Dual Economy</div>
+            <div class="pub-venue">Develops a dual-economy equilibrium model showing how inflation reduces capital accumulation and leads to a positive inflation–unemployment relationship in developing countries.</div>
+          </div>
+          <div class="pub-item wp-item" style="border-left-color: var(--gold);">
+            <div class="pub-title">AI and Corporate ESG Strategy Facing Extreme Weather</div>
+            <div class="pub-venue">Explores how companies adjust ESG strategies in response to extreme weather events and the role AI technology plays in this adaptation, using large-scale daily weather data.</div>
+          </div>
+          <div class="pub-item wp-item" style="border-left-color: var(--gold);">
+            <div class="pub-title">Substitution Effects of AI on Labor</div>
+            <div class="pub-venue">Constructs a general equilibrium model examining how AI impacts labor substitution across industries under varying conditions of capital abundance, urbanization, and industrialization.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching">
+      <div class="section-label">Pedagogy</div>
+      <div class="section-title">Teaching Experience</div>
+      <div class="teach-list">
+
+        <div class="teach-item">
+          <div class="teach-body">
+            <div class="teach-course">PhD Math Camp — Instructor</div>
+            <div class="teach-role">University of Florida · Incoming FRE PhD cohort · Score: 4.9 / 5.0
+              · <a href="https://github.com/DaiRudy/FRE-25-PHD-MathCamp" target="_blank" style="color:var(--gold); font-size:0.77rem;">Slides &amp; Syllabus ↗</a>
+            </div>
+          </div>
+          <div class="teach-date">Aug 2025</div>
+        </div>
+
+        <div class="teach-item">
+          <div class="teach-body">
+            <div class="teach-course">AEB 4138 – Adv. Agribusiness Management</div>
+            <div class="teach-role">Teaching Assistant · University of Florida · Advisor: Dr. Jacklyn Kropp</div>
+          </div>
+          <div class="teach-date">Jan – May 2025</div>
+        </div>
+
+        <div class="teach-item">
+          <div class="teach-body">
+            <div class="teach-course">ECO 7115 – Microeconomics Theory (PhD Core)</div>
+            <div class="teach-role">Teaching Assistant · University of Florida · Advisor: Dr. Fatma Gunay</div>
+          </div>
+          <div class="teach-date">Aug – Dec 2024</div>
+        </div>
+
+        <div class="teach-item">
+          <div class="teach-body">
+            <div class="teach-course">AEB 2014 – Economics: Issues of Food and You</div>
+            <div class="teach-role">Teaching Assistant · University of Florida · Advisor: Dr. Jennifer Clark</div>
+          </div>
+          <div class="teach-date">Aug 2023 – May 2024</div>
+        </div>
+
+        <div class="teach-item">
+          <div class="teach-body">
+            <div class="teach-course">Development Economics — Instructor</div>
+            <div class="teach-role">Wuhan University · Advisor: Dr. Fei Fan</div>
+          </div>
+          <div class="teach-date">Sep 2021 – Jan 2022</div>
+        </div>
+
+        <div class="teach-item">
+          <div class="teach-body">
+            <div class="teach-course">Regional Economics — Instructor</div>
+            <div class="teach-role">Wuhan University · Advisor: Dr. Fei Fan</div>
+          </div>
+          <div class="teach-date">Sep 2020 – Jan 2021</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section id="awards">
+      <div class="section-label">Recognition</div>
+      <div class="section-title">Awards &amp; Honors</div>
+      <div class="award-list">
+        <div class="award-item">
+          <div>
+            <div class="award-name award-star">J. R. Greenman Memorial Scholarship</div>
+            <div class="award-inst">University of Florida</div>
+          </div>
+          <div class="award-year">2025</div>
+        </div>
+        <div class="award-item">
+          <div>
+            <div class="award-name award-star">Harold B. Clark Award</div>
+            <div class="award-inst">University of Florida</div>
+          </div>
+          <div class="award-year">2024</div>
+        </div>
+        <div class="award-item">
+          <div>
+            <div class="award-name">Grinter Fellowship</div>
+            <div class="award-inst">University of Florida</div>
+          </div>
+          <div class="award-year">2023</div>
+        </div>
+        <div class="award-item">
+          <div>
+            <div class="award-name award-star">Amerisolar Scholarship (Top 3)</div>
+            <div class="award-inst">Hopkins Nanjing Center</div>
+          </div>
+          <div class="award-year">2023</div>
+        </div>
+        <div class="award-item">
+          <div>
+            <div class="award-name award-star">National Scholarship for Postgraduates (Top 1%)</div>
+            <div class="award-inst">Ministry of Education, China</div>
+          </div>
+          <div class="award-year">2022</div>
+        </div>
+        <div class="award-item">
+          <div>
+            <div class="award-name award-star">First Prize, Excellent Paper (Top 1)</div>
+            <div class="award-inst">Wuhan University</div>
+          </div>
+          <div class="award-year">2021</div>
+        </div>
+        <div class="award-item">
+          <div>
+            <div class="award-name award-star">First Prize, Scholarship of Excellence (Top 1)</div>
+            <div class="award-inst">Wuhan University</div>
+          </div>
+          <div class="award-year">2021</div>
+        </div>
+        <div class="award-item">
+          <div>
+            <div class="award-name">Excellent Student (Top 2)</div>
+            <div class="award-inst">Fudan University</div>
+          </div>
+          <div class="award-year">2019</div>
+        </div>
+        <div class="award-item">
+          <div>
+            <div class="award-name">First Prize, Scholarship of Excellence (Top 2)</div>
+            <div class="award-inst">Tongji University</div>
+          </div>
+          <div class="award-year">2018</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE -->
+    <section id="service">
+      <div class="section-label">Community</div>
+      <div class="section-title">Academic &amp; Professional Service</div>
+
+      <div class="service-block">
+        <h4>Peer Reviewer (30+ Journals)</h4>
+        <div class="service-tags">
+          <span class="service-tag">Nature Cities</span>
+          <span class="service-tag">Journal of Business Research</span>
+          <span class="service-tag">Cities</span>
+          <span class="service-tag">Applied Geography</span>
+          <span class="service-tag">Technovation</span>
+          <span class="service-tag">Npj Urban Sustainability</span>
+          <span class="service-tag">Transportation Research Part E</span>
+          <span class="service-tag">Energy Policy</span>
+          <span class="service-tag">Applied Economics</span>
+          <span class="service-tag">International Review of Financial Analysis</span>
+          <span class="service-tag">Journal of Asian Economics</span>
+          <span class="service-tag">Annals of Regional Science</span>
+          <span class="service-tag">Technology in Society</span>
+          <span class="service-tag">Journal of Cleaner Production</span>
+          <span class="service-tag">Scientific Reports</span>
+          <span class="service-tag">Energy and Environment</span>
+          <span class="service-tag">Journal of Population Aging</span>
+          <span class="service-tag">+ more</span>
+        </div>
+      </div>
+
+      <div class="service-block">
+        <h4>Expert Respondent</h4>
+        <div class="service-tags">
+          <span class="service-tag">Times Higher Education Academic Reputation Survey (2025 World Rankings)</span>
+          <span class="service-tag">US News World University Rankings — Academic Reputation (2023, 2026)</span>
+        </div>
+      </div>
+
+      <div class="service-block">
+        <h4>Memberships</h4>
+        <div class="service-tags">
+          <span class="service-tag">Agricultural &amp; Applied Economics Association (AAEA)</span>
+          <span class="service-tag">Chinese Economist Society (CES)</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 28px;">
+        <div class="section-label" style="margin-bottom:12px;">Skills</div>
+        <div class="skills-row">
+          <div class="skill-block">
+            <h4>Programming</h4>
+            <p>R · Python · STATA · MATLAB · SQL · LaTeX</p>
+          </div>
+          <div class="skill-block">
+            <h4>Languages</h4>
+            <p>English · Chinese · French (Basic)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  © 2025 Shangze (Rudy) Dai &nbsp;·&nbsp;
+  Ph.D. Candidate, University of Florida &nbsp;·&nbsp;
+  <a href="mailto:shangzedai@ufl.edu">shangzedai@ufl.edu</a> &nbsp;·&nbsp;
+  Last updated: April 2026
+</footer>
+
+<script>
+  // Intersection Observer for fade-in animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.06 });
+
+  document.querySelectorAll('section').forEach(s => observer.observe(s));
+
+  // Active nav link
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>
