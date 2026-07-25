@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shangze (Rudy) Dai – Economist</title>
+  <title>Shangze (Rudy) Dai | Economist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
@@ -251,7 +251,7 @@
 
     /* ───── SECTION ───── */
     section {
-      margin-bottom: 64px;
+      margin-bottom: 52px;
       opacity: 0;
       transform: translateY(18px);
       transition: opacity 0.55s ease, transform 0.55s ease;
@@ -447,6 +447,52 @@
       background: linear-gradient(135deg, rgba(26,39,68,0.03), rgba(26,39,68,0.01));
       border: 1px solid var(--border);
       border-left: 3px solid var(--navy-mid);
+    }
+
+    /* ───── FEATURED RESEARCH ───── */
+    .research-feature {
+      padding: 22px 24px;
+      background: #fff;
+      border-left: 3px solid var(--gold);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      margin-bottom: 18px;
+    }
+    .research-kicker {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 7px;
+    }
+    .research-feature h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .research-feature ul {
+      margin: 8px 0 0 18px;
+      color: #454545;
+    }
+    .research-feature li {
+      font-size: 0.88rem;
+      margin-bottom: 7px;
+      padding-left: 3px;
+    }
+    .dissertation-theme {
+      font-size: 0.9rem;
+      color: var(--navy);
+      margin-bottom: 7px;
+    }
+    .research-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 30px 0 14px;
     }
 
     /* ───── TEACHING ───── */
@@ -666,8 +712,7 @@
 <nav id="topnav">
   <a href="#about">About</a>
   <a href="#education">Education</a>
-  <a href="#publications">Publications</a>
-  <a href="#working-papers">Working Papers</a>
+  <a href="#research">Research</a>
   <a href="#teaching">Teaching</a>
   <a href="#awards">Awards</a>
   <a href="#service">Service</a>
@@ -678,7 +723,7 @@
   <!-- SIDEBAR -->
   <aside>
     <div class="avatar-ring">
-      <div class="avatar-placeholder">SD</div>
+      <img src="Image.jpg" alt="Portrait of Shangze Dai" />
     </div>
     <div class="sidebar-name">Shangze <em>(Rudy)</em> Dai</div>
     <div class="sidebar-role">Ph.D. Candidate · Economist</div>
@@ -687,13 +732,12 @@
     <div class="sidebar-info">
       <div class="info-item">
         <svg class="info-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
-        <span class="info-text">Gainesville, FL &amp; Baltimore, MD</span>
+        <span class="info-text">MCCA 1172, 1692 McCarty Dr.<br/>Gainesville, FL 32603</span>
       </div>
       <div class="info-item">
         <svg class="info-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         <span class="info-text">
-          <a href="mailto:shangzedai@ufl.edu">shangzedai@ufl.edu</a><br/>
-          <a href="mailto:sdai8@jhu.edu">sdai8@jhu.edu</a>
+          <a href="mailto:shangzedai@ufl.edu">shangzedai@ufl.edu</a>
         </span>
       </div>
       <div class="info-item">
@@ -710,30 +754,15 @@
     </div>
 
     <div class="sidebar-links">
+      <a href="CV_Long_Shangze.pdf" target="_blank">
+        CV
+      </a>
       <a href="https://scholar.google.com/citations?hl=en&user=pHgtKY4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank">
         Scholar
       </a>
       <a href="https://www.linkedin.com/in/rudydai-836282292/" target="_blank">
         LinkedIn
       </a>
-      <a href="https://github.com/DaiRudy/FRE-25-PHD-MathCamp" target="_blank">
-        GitHub
-      </a>
-    </div>
-
-    <div class="sidebar-stat-row">
-      <div class="sidebar-stat">
-        <span class="num">428+</span>
-        <span class="lbl">Citations</span>
-      </div>
-      <div class="sidebar-stat">
-        <span class="num">19</span>
-        <span class="lbl">Pub.</span>
-      </div>
-      <div class="sidebar-stat">
-        <span class="num">30+</span>
-        <span class="lbl">Reviews</span>
-      </div>
     </div>
   </aside>
 
@@ -742,16 +771,16 @@
 
     <!-- HERO -->
     <div class="hero-stripe">
-      <div class="hero-tagline">Economics of <em>New Technology</em><br>& Sustainable Development</div>
+      <div class="hero-tagline">Economics of <em>New Technology</em> <br>&amp; Sustainable Development</div>
       <div class="hero-sub">
-        Ph.D. candidate at the University of Florida and M.S. student at Johns Hopkins University,
-        studying how emerging technologies reshape labor markets, ecological outcomes, and economic growth.
+        Climate change and rapid digitalization are reshaping economies, industries, and societies around the world, 
+        making it increasingly important to understand their economic consequences and take actions for out future.
       </div>
       <div class="hero-chips">
+        <span class="hero-chip">Innovation &amp; Technological Change</span>
         <span class="hero-chip">Economics of AI</span>
-        <span class="hero-chip">Technological Progress</span>
-        <span class="hero-chip">Sustainable Development</span>
-        <span class="hero-chip">Digital Economy</span>
+        <span class="hero-chip">Industrial Organization</span>
+        <span class="hero-chip">Production Economics</span>
       </div>
     </div>
 
@@ -760,31 +789,21 @@
       <div class="section-label">Profile</div>
       <div class="section-title">About Me</div>
       <p>
-        I am a Ph.D. student in Applied Economics at the <strong>University of Florida</strong> (Advisor: Dr. Zhengfei Guan)
-        and an M.S. student in Applied Mathematics at <strong>Johns Hopkins University</strong> (Advisor: Prof. James Spall).
-        Prior to this, I completed a Certificate in International Studies at <strong>Hopkins Nanjing Center</strong>
-        and an M.Phil. in Economics at <strong>Wuhan University</strong>.
+        I am a Ph.D. Candidate in Applied Economics at the <strong>University of Florida</strong>
+        (Advisor: Dr. Zhengfei Guan).
+        I previously completed an M.S. in Applied and Computational Mathematics at
+        <strong>Johns Hopkins University</strong> (Advisor: Prof. James Spall), a Certificate in International Studies at the
+        <strong>Hopkins Nanjing Center</strong>, an M.Phil. in Economics at
+        <strong>Wuhan University</strong>, and a B.S. in Economics at
+        <strong>Tongji University</strong>.
       </p>
       <p>
-        My research lies at the intersection of technology, environment, and economic development.
-        I develop theoretical models and empirical strategies to understand how AI, automation, and digital
-        technologies reshape labor markets, ecological footprints, and growth dynamics — particularly in
-        transforming and developing economies.
+        My research focuses on the economics of innovation and technological change, the economics of AI,
+        industrial organization and production economics, and environmental and resource economics.
+        I combine theoretical models with causal inference, machine learning, and large-scale firm,
+        regional, and agricultural data to study how new technologies affect productivity, market power,
+        resource allocation, and environmental outcomes.
       </p>
-      <p>
-        I have published in journals including <em>Ecological Economics</em>, <em>Environmental and Resource Economics</em>,
-        <em>Review of Development Economics</em>, <em>Journal of Regional Science</em>, and <em>Energy Economics</em>,
-        with over 428 citations on Google Scholar.
-      </p>
-
-      <div class="interests-grid">
-        <span class="tag">Economics of AI &amp; Automation</span>
-        <span class="tag">Environmental Economics</span>
-        <span class="tag">Technological Progress</span>
-        <span class="tag">Regional &amp; Urban Economics</span>
-        <span class="tag">ESG &amp; Climate Strategy</span>
-        <span class="tag">General Equilibrium Modeling</span>
-      </div>
     </section>
 
     <!-- EDUCATION -->
@@ -861,102 +880,69 @@
       </div>
     </section>
 
-    <!-- PUBLICATIONS -->
-    <section id="publications">
-      <div class="section-label">Peer-Reviewed Research</div>
-      <div class="section-title">Selected Publications</div>
+    <!-- RESEARCH -->
+    <section id="research">
+      <div class="section-label">Selected Work</div>
+      <div class="section-title">Research</div>
+
+      <div class="research-feature">
+        <div class="research-kicker">Job Market Paper</div>
+        <h3>The Economic Value of Precision Agriculture under Drought Risk: Evidence from U.S. Corn Counties</h3>
+        <ul>
+          <li>Examines whether precision agriculture mitigates the effects of drought on corn yields and crop insurance losses using county-level data from major U.S. corn-producing states.</li>
+          <li>Combines county-year panel models, entropy balancing, staggered difference-in-differences, machine learning, and a dynamic stochastic welfare framework.</li>
+          <li>Finds that precision agriculture reduces drought-related production and insurance losses and generates estimated benefits of approximately $5–$20 per acre per year.</li>
+        </ul>
+      </div>
+
+      <div class="research-feature">
+        <div class="research-kicker">Dissertation</div>
+        <div class="dissertation-theme"><strong>Theme:</strong> Geopolitical Risk, Technology Catch-up, Energy Transition, and Food Security</div>
+        <ul>
+          <li>Food Security Concerns under Geopolitical Risk: Land, Trade, and Ecology.</li>
+          <li>Geopolitical Risk and Renewable Energy Transition.</li>
+          <li>U.S.–China Technological Decoupling and Indigenous Innovation in China.</li>
+        </ul>
+      </div>
+
+      <div class="research-subtitle">Selected Publications and Working Papers</div>
       <div class="pub-list">
 
         <div class="pub-item">
           <div class="pub-year-chip">2026</div>
-          <div class="pub-title">Unintended Carbon Cost of Automation Technology in Transforming Economies: The Role of Capital Dependence and Structure Change</div>
+          <div class="pub-title">Unintended Carbon Cost of Automation Technology in Transforming Economies: The Role of Capital Dependence and Structural Change</div>
           <div class="pub-authors"><strong>Dai, S.</strong>*, &amp; Ji, J.</div>
-          <div class="pub-venue"><em>Ecological Economics</em>, 2026</div>
+          <div class="pub-venue"><em>Ecological Economics</em></div>
         </div>
 
         <div class="pub-item">
-          <div class="pub-year-chip">2025</div>
-          <div class="pub-title">Technology Import and Biased Technological Progress in Transforming Economies: Evidence From China</div>
+          <div class="pub-year-chip">2026</div>
+          <div class="pub-title">Technology Import and Biased Technological Progress in Transforming Economies: Evidence from China</div>
           <div class="pub-authors"><strong>Dai, S.</strong>*, Ji, J., &amp; Yu, H.</div>
-          <div class="pub-venue"><em>Review of Development Economics</em>, 2025</div>
+          <div class="pub-venue"><em>Review of Development Economics</em></div>
         </div>
 
         <div class="pub-item">
           <div class="pub-year-chip">2025</div>
           <div class="pub-title">Understanding Automation's Impact on Ecological Footprint: Theory and Empirical Evidence from Europe</div>
           <div class="pub-authors"><strong>Dai, S.</strong>*</div>
-          <div class="pub-venue"><em>Environmental and Resource Economics</em>, 2025</div>
+          <div class="pub-venue"><em>Environmental and Resource Economics</em></div>
         </div>
 
         <div class="pub-item">
           <div class="pub-year-chip">2025</div>
-          <div class="pub-title">Industrial Robot, Resource Misallocation, and Firm Innovation Performance</div>
-          <div class="pub-authors">Yang, B., Fan, F.*, <strong>Dai, S.</strong>* et al.</div>
-          <div class="pub-venue"><em>Journal of Regional Science</em>, 2025</div>
+          <div class="pub-title">Industrial Robots, Resource Misallocation, and Firm Innovation Performance</div>
+          <div class="pub-authors">Yang, B., Fan, F.*, <strong>Dai, S.</strong>*, et al.</div>
+          <div class="pub-venue"><em>Journal of Regional Science</em></div>
         </div>
-
-        <div class="pub-item">
-          <div class="pub-year-chip">2025</div>
-          <div class="pub-title">Trade Liberalization, Factor Network Association, and Energy Poverty</div>
-          <div class="pub-authors">Li, G., Zhang, N., <strong>Dai, S.</strong> et al.</div>
-          <div class="pub-venue"><em>Energy Economics</em>, 2025</div>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-year-chip">2025</div>
-          <div class="pub-title">Understanding and Evaluating New Quality Productive Forces in China: Based on Machine Learning</div>
-          <div class="pub-authors">Cao, Y., <strong>Dai, S.</strong>*</div>
-          <div class="pub-venue"><em>Applied Economics Letters</em>, 2025</div>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-year-chip">2024</div>
-          <div class="pub-title">The Effect of Gender Gap in Labor Market Participation on Carbon Emission Efficiency: State Level Empirical Evidence from the US</div>
-          <div class="pub-authors"><strong>Dai, S.</strong>, Dai, Y., &amp; Yu, H.</div>
-          <div class="pub-venue"><em>Energy and Environment</em>, 2024, 1–27</div>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-year-chip">2024</div>
-          <div class="pub-title">Energy-Saving Technological Change, Regional Economy Growth and Endowment Structure: Empirical Evidence from Chinese Cities</div>
-          <div class="pub-authors"><strong>Dai, S.</strong>, Dai, Y., Hu, J., &amp; Yu, H.</div>
-          <div class="pub-venue"><em>Technology Analysis &amp; Strategic Management</em>, 2024, 1–14</div>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-year-chip">2024</div>
-          <div class="pub-title">Green Bonds and Sustainable Development: Theoretical Model and Empirical Evidence from Europe</div>
-          <div class="pub-authors"><strong>Dai, S.</strong>, Yu, H., Aiya, F., &amp; Yang, B.</div>
-          <div class="pub-venue"><em>International Journal of Sustainable Development &amp; World Ecology</em>, 2024, 1–16</div>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-year-chip">2021</div>
-          <div class="pub-title">Innovation Agglomeration and Urban Hierarchy: Evidence from Chinese Cities</div>
-          <div class="pub-authors">Fan, F., <strong>Dai, S.</strong>, Zhang, K., &amp; Ke, H.</div>
-          <div class="pub-venue"><em>Applied Economics</em>, 2021, 53(54), 6300–6318</div>
-        </div>
-
-      </div>
-
-      <p style="margin-top:18px; font-size:0.78rem; color:var(--muted);">
-        * Corresponding author. See <a href="https://scholar.google.com/citations?hl=en&user=pHgtKY4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" style="color:var(--gold);">Google Scholar</a> for the full list of 19 peer-reviewed publications.
-      </p>
-    </section>
-
-    <!-- WORKING PAPERS -->
-    <section id="working-papers">
-      <div class="section-label">In Progress</div>
-      <div class="section-title">Working Papers</div>
-      <div class="wp-list">
 
         <div class="pub-item wp-item">
           <div class="pub-title">
             Mitigating the Heat: The Role of AI Technology in Shielding Corporate Environmental Performance from Extreme Temperatures
             <span class="pub-badge badge-rr">R&amp;R</span>
           </div>
-          <div class="pub-authors"><strong>Dai, S.</strong>*, &amp; Ji, J.</div>
-          <div class="pub-venue">Revise &amp; Resubmit at <em>Business Strategy and Environment</em></div>
+          <div class="pub-authors"><strong>Dai, S.</strong>, Ji, J., &amp; Huang, K.*</div>
+          <div class="pub-venue">Revise &amp; Resubmit at <em>Business Strategy and the Environment</em></div>
         </div>
 
         <div class="pub-item wp-item">
@@ -968,37 +954,14 @@
           <div class="pub-venue">Revise &amp; Resubmit at <em>Land Use Policy</em></div>
         </div>
 
-        <div class="pub-item wp-item">
-          <div class="pub-title">Urban Density and Innovation Performance in Chinese Cities</div>
-          <div class="pub-authors">Fan, F., Zhang, K., &amp; <strong>Dai, S.</strong>*</div>
-          <div class="pub-venue">Under Review</div>
-        </div>
-
-        <div class="pub-item wp-item">
-          <div class="pub-title">Threshold Effects of Bioresource Technology on Carbon Intensity</div>
-          <div class="pub-authors">Cao, Y., Yu, H., &amp; <strong>Dai, S.</strong>*</div>
-          <div class="pub-venue">Under Review</div>
-        </div>
-
       </div>
 
-      <div style="margin-top: 28px;">
-        <div class="section-label" style="margin-bottom:12px;">Current Research Projects</div>
-        <div class="wp-list">
-          <div class="pub-item wp-item" style="border-left-color: var(--gold);">
-            <div class="pub-title">Phillips Curve in Dual Economy</div>
-            <div class="pub-venue">Develops a dual-economy equilibrium model showing how inflation reduces capital accumulation and leads to a positive inflation–unemployment relationship in developing countries.</div>
-          </div>
-          <div class="pub-item wp-item" style="border-left-color: var(--gold);">
-            <div class="pub-title">AI and Corporate ESG Strategy Facing Extreme Weather</div>
-            <div class="pub-venue">Explores how companies adjust ESG strategies in response to extreme weather events and the role AI technology plays in this adaptation, using large-scale daily weather data.</div>
-          </div>
-          <div class="pub-item wp-item" style="border-left-color: var(--gold);">
-            <div class="pub-title">Substitution Effects of AI on Labor</div>
-            <div class="pub-venue">Constructs a general equilibrium model examining how AI impacts labor substitution across industries under varying conditions of capital abundance, urbanization, and industrialization.</div>
-          </div>
-        </div>
-      </div>
+      <p style="margin-top:18px; font-size:0.78rem; color:var(--muted);">
+        * Corresponding author. See
+        <a href="https://scholar.google.com/citations?hl=en&user=pHgtKY4AAAAJ&view_op=list_works&sortby=pubdate"
+           target="_blank" style="color:var(--gold);">Google Scholar</a>
+        for the full publication list.
+      </p>
     </section>
 
     <!-- TEACHING -->
@@ -1019,42 +982,34 @@
 
         <div class="teach-item">
           <div class="teach-body">
-            <div class="teach-course">AEB 4138 – Adv. Agribusiness Management</div>
-            <div class="teach-role">Teaching Assistant · University of Florida · Advisor: Dr. Jacklyn Kropp</div>
+            <div class="teach-course">AEB 3103 — Principles of Food and Resource Economics</div>
+            <div class="teach-role">Teaching Assistant · University of Florida · Instructor: James Ji</div>
           </div>
-          <div class="teach-date">Jan – May 2025</div>
+          <div class="teach-date">Fall 2025</div>
         </div>
 
         <div class="teach-item">
           <div class="teach-body">
-            <div class="teach-course">ECO 7115 – Microeconomics Theory (PhD Core)</div>
-            <div class="teach-role">Teaching Assistant · University of Florida · Advisor: Dr. Fatma Gunay</div>
+            <div class="teach-course">AEB 4138 — Advanced Agribusiness Management</div>
+            <div class="teach-role">Teaching Assistant · University of Florida · Instructor: Jacklyn Kropp</div>
           </div>
-          <div class="teach-date">Aug – Dec 2024</div>
+          <div class="teach-date">Spring 2025</div>
         </div>
 
         <div class="teach-item">
           <div class="teach-body">
-            <div class="teach-course">AEB 2014 – Economics: Issues of Food and You</div>
-            <div class="teach-role">Teaching Assistant · University of Florida · Advisor: Dr. Jennifer Clark</div>
+            <div class="teach-course">ECO 7115 — Microeconomic Theory (Ph.D. Core)</div>
+            <div class="teach-role">Teaching Assistant · University of Florida · Instructor: Fatma Gunay</div>
           </div>
-          <div class="teach-date">Aug 2023 – May 2024</div>
+          <div class="teach-date">Fall 2024</div>
         </div>
 
         <div class="teach-item">
           <div class="teach-body">
-            <div class="teach-course">Development Economics — Instructor</div>
-            <div class="teach-role">Wuhan University · Advisor: Dr. Fei Fan</div>
+            <div class="teach-course">AEB 2014 — Economics: Issues of Food and You</div>
+            <div class="teach-role">Teaching Assistant · University of Florida · Instructor: Jennifer Clark</div>
           </div>
-          <div class="teach-date">Sep 2021 – Jan 2022</div>
-        </div>
-
-        <div class="teach-item">
-          <div class="teach-body">
-            <div class="teach-course">Regional Economics — Instructor</div>
-            <div class="teach-role">Wuhan University · Advisor: Dr. Fei Fan</div>
-          </div>
-          <div class="teach-date">Sep 2020 – Jan 2021</div>
+          <div class="teach-date">2023–2024</div>
         </div>
 
       </div>
@@ -1100,34 +1055,6 @@
           </div>
           <div class="award-year">2022</div>
         </div>
-        <div class="award-item">
-          <div>
-            <div class="award-name award-star">First Prize, Excellent Paper (Top 1)</div>
-            <div class="award-inst">Wuhan University</div>
-          </div>
-          <div class="award-year">2021</div>
-        </div>
-        <div class="award-item">
-          <div>
-            <div class="award-name award-star">First Prize, Scholarship of Excellence (Top 1)</div>
-            <div class="award-inst">Wuhan University</div>
-          </div>
-          <div class="award-year">2021</div>
-        </div>
-        <div class="award-item">
-          <div>
-            <div class="award-name">Excellent Student (Top 2)</div>
-            <div class="award-inst">Fudan University</div>
-          </div>
-          <div class="award-year">2019</div>
-        </div>
-        <div class="award-item">
-          <div>
-            <div class="award-name">First Prize, Scholarship of Excellence (Top 2)</div>
-            <div class="award-inst">Tongji University</div>
-          </div>
-          <div class="award-year">2018</div>
-        </div>
       </div>
     </section>
 
@@ -1137,9 +1064,10 @@
       <div class="section-title">Academic &amp; Professional Service</div>
 
       <div class="service-block">
-        <h4>Peer Reviewer (30+ Journals)</h4>
+        <h4>Peer Reviewer</h4>
         <div class="service-tags">
           <span class="service-tag">Nature Cities</span>
+          <span class="service-tag">Energy Economics</span>
           <span class="service-tag">Journal of Business Research</span>
           <span class="service-tag">Cities</span>
           <span class="service-tag">Applied Geography</span>
@@ -1171,6 +1099,7 @@
       <div class="service-block">
         <h4>Memberships</h4>
         <div class="service-tags">
+          <span class="service-tag">American Economic Association (AEA)</span>
           <span class="service-tag">Agricultural &amp; Applied Economics Association (AAEA)</span>
           <span class="service-tag">Chinese Economist Society (CES)</span>
         </div>
@@ -1195,10 +1124,10 @@
 </div>
 
 <footer>
-  © 2025 Shangze (Rudy) Dai &nbsp;·&nbsp;
+  © 2026 Shangze (Rudy) Dai &nbsp;·&nbsp;
   Ph.D. Candidate, University of Florida &nbsp;·&nbsp;
   <a href="mailto:shangzedai@ufl.edu">shangzedai@ufl.edu</a> &nbsp;·&nbsp;
-  Last updated: April 2026
+  Last updated: July 2026
 </footer>
 
 <script>
